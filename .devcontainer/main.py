@@ -1,3 +1,7 @@
+#To get random number for ai choice
+import random
+
+
 def modulo_calculator():
     #getting first number, then get the number to mod the first 
     x = input("First number?")
@@ -78,15 +82,34 @@ def change_machine():
 
     print(str(coin_counts[0]) + " quarters, " + str(coin_counts[1]) + " dimes and " + str(coin_counts[2]) + " nickels")
         
-def rock_paper_scissor():
+def rock_paper_scissors():
+    #Get user choice (do while)
+    while True:
+        user_input = int(input("Make a choice. \n 1. Rock \n 2. Paper \n 3.Scissors"))  
 
-    user_c = int(input("make choice"))       
-
-
-def rps_choice
+        if user_input >= 1 and user_input <= 3:
+            break
+        print("Invalid choice, please pick again")
+    #Get string from choice
+    user_c = rps_choice(user_input)
+    #Getting random number
+    ai_c = rps_choice(random.randint(10,39) // 10)
+    #Checking for draw
+    if user_c == ai_c: 
+        print("Draw!")
+        return
+    #Declaring Win/lose string variable
+    won = "won"
+    #Checking if you lose
+    if ((user_c == "rock" and ai_c == "paper") or
+            (user_c == "paper" and ai_c == "scissors") or
+            (user_c == "scissors" and ai_c == "rock")):
+        won = "lost"
+    #print result
+    print("You " + won + "! You chose " + user_c + " and the AI chose " + ai_c)
+#Helper function
+def rps_choice(user_input):
      
-     user_input = int(input("Make a choice. \n 1. Rock \n 2. Paper \n 3.Scissors"))
-
     if user_input == 1:
         return "rock"
 
@@ -94,13 +117,10 @@ def rps_choice
         return "paper"
 
     elif user_input == 3:
-        return "Scissors"
+        return "scissors"
 
 
-
-
-
-
+#def mario_flag():
 
 
 
@@ -120,7 +140,7 @@ elif user_input == 4:
 elif user_input == 5:
     change_machine()
 elif user_input == 6:
-    rock_paper_sissor()
+    rock_paper_scissors()
 elif user_input == 7:
     mario_flag() 
 

@@ -22,13 +22,13 @@ def int_division():
 
 def for_loop_counter():
 
-    counter = float(input("What should the starting value of the counter be?"))
+    counter = float(input("What should the starting value of the counter be?\n"))
 
-    loop_counter = int(input("How many times should the loop run?"))
+    loop_counter = int(input("How many times should the loop run?\n"))
 
-    increment = float(input("How much should the counter increment by?"))
+    increment = float(input("How much should the counter increment by?\n"))
 
-    is_positive = input("Should the counter decrement instead of incrementing? y / n") == "n"
+    is_positive = input("Should the counter decrement instead of incrementing? y / n\n") == "n"
     
     if not is_positive:
         increment *= -1
@@ -85,7 +85,7 @@ def change_machine():
 def rock_paper_scissors():
     #Get user choice (do while)
     while True:
-        user_input = int(input("Make a choice. \n 1. Rock \n 2. Paper \n 3.Scissors"))  
+        user_input = int(input("Make a choice. \n 1. Rock \n 2. Paper \n 3. Scissors \n"))  
 
         if user_input >= 1 and user_input <= 3:
             break
@@ -96,7 +96,7 @@ def rock_paper_scissors():
     ai_c = rps_choice(random.randint(10,39) // 10)
     #Checking for draw
     if user_c == ai_c: 
-        print("Draw!")
+        print("Draw! You both played " + user_c)
         return
     #Declaring Win/lose string variable
     won = "won"
@@ -120,7 +120,24 @@ def rps_choice(user_input):
         return "scissors"
 
 
-#def mario_flag():
+def mario_flag():
+    #Setting symbols to make stair case and flag pole
+    flag = ">"
+    step = "#"
+    pole = "|"
+    number_of_steps = int(input("How many steps should mario climb to finish the level?")) 
+
+    print((" " * (number_of_steps + 3))+ pole + flag)
+
+    for i in range(1,number_of_steps):
+        print((" " * (number_of_steps - i))+ (step * (i + 1)) + "  " + pole)
+
+    print((step * (number_of_steps + 1)) + "  " + step)
+
+
+
+
+
 
 
 

@@ -13,10 +13,10 @@ def modulo_calculator():
 
 def int_division():
     #Getting the first number to be divieded, the the second number to divied the first by.
-    x = int(input("What number would you like divied?"))
+    x = int(input("What number would you like divide?"))
     y = int(input("What number would you like to divide by?"))
-    #Preforming calculation / = divition 
-    z = x / y
+    #Use built-in int division 
+    z = x // y
     #print calculated result
     print("The result is " + str(z))
 
@@ -125,13 +125,17 @@ def mario_flag():
     flag = ">"
     step = "#"
     pole = "|"
+    #Getting number of steps
     number_of_steps = int(input("How many steps should mario climb to finish the level?")) 
-
+    #Printing out top line
+    #The top level has 2 steps so the bottom has number of steps plus 1
+    #Then there are 2 more spaces befor the pole and the flag
     print((" " * (number_of_steps + 3))+ pole + flag)
-
+    #Print all levels of steps and poles except bottom
     for i in range(1,number_of_steps):
+        #print one more step and one less space every time
         print((" " * (number_of_steps - i))+ (step * (i + 1)) + "  " + pole)
-
+    #printing out bottom
     print((step * (number_of_steps + 1)) + "  " + step)
 
 
@@ -141,6 +145,14 @@ def mario_flag():
 
 
 
+print("0. Modulo Calculator")
+print("1. Int Division")
+print("2. For Loop Counter")
+print("3. Float Int Calculator")
+print("4. ASCII Character Values")
+print("5. Change Machine")
+print("6. Rock Paper Sicssors")
+print("7. Mario Wins A Level!")
 
 user_input = int(input("Which function would you like to run?"))
 
